@@ -1,0 +1,33 @@
+﻿@using kahvedükkanı.Models.Siniflar
+@model  List<Menu>
+@{
+    ViewBag.Title = "ListProduct";
+    Layout = "~/Views/Shared/_AdminLayoyt.cshtml";
+}
+
+<h2>Product List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>PRODUCT ID</th>
+        <th>PRODUCT NAME</th>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+        <th>REMOVE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.ProductID</td>
+            <td>@x.ProductName</td>
+            <td>@x.CategoryID</td>
+            @*<td>@x.CategoryName</td>*@
+            <td><a href="/Admin/RemoveProduct/@x.ProductID" class="btn btn-danger">Remove</a></td>
+            <td><a href="/Admin/FindProduct/@x.ProductID" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/NewProduct/" class="btn btn-primary">Add New Product</a>
+

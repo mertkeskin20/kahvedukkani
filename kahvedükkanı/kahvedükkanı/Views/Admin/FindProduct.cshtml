@@ -1,0 +1,28 @@
+﻿@model kahvedükkanı.Models.Siniflar.Menu
+@{
+    ViewBag.Title = "FindProduct";
+    Layout = "~/Views/Shared/_AdminLayoyt.cshtml";
+}
+
+<h2>Update Product</h2>
+<br />
+
+@using (Html.BeginForm("UpdateProduct", "Admin", FormMethod.Post))
+{
+    @Html.LabelFor(x => x.ProductID)
+    @Html.TextBoxFor(x => x.ProductID, new { @class = "form-control", @readonly = "readonly" }) @*css ekleme*@
+    <br />
+    @Html.LabelFor(x => x.ProductName)
+    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" }) @*css ekleme*@
+    <br />
+    @Html.LabelFor(x => x.ProductImgUrl)
+    @Html.TextAreaFor(x => x.ProductImgUrl, new { @class = "form-control" }) @*css ekleme*@
+    <br />
+    @Html.LabelFor(x => x.CategoryID)
+    @Html.TextBoxFor(x => x.CategoryID, new { @class = "form-control" }) @*css ekleme*@
+    <br />
+    @*@Html.LabelFor(x => x.CategoryName)
+    @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })*@ @*css ekleme*@
+    <br />
+    <button class="btn btn-success">Update Product</button>
+}

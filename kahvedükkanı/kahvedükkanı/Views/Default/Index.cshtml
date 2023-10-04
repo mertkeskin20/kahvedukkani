@@ -1,0 +1,141 @@
+﻿@using kahvedükkanı.Models.Siniflar
+@model List<AnaSayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_TestLauout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="hero_area">
+        <div class="bg-box">
+            <img src="~/web/images/coffee-background.jpeg" alt="" />
+        </div>
+        <!-- slider section -->
+        <section class="slider_section ">
+            <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-7 col-lg-6 ">
+                                    <div class="detail-box">
+                                        <h1>
+                                            kahvedükkanı
+                                        </h1>
+                                        <p>
+                                            Meeting point for coffee lovers!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-7 col-lg-6 ">
+                                    <div class="detail-box">
+                                        <h1>
+                                            kahvedükkanı
+                                        </h1>
+                                        <p>
+                                            Welcome to a world full of coffee! We, as coffee lovers, aim to share with you the most up-to-date information about coffee, delicious recipes and innovations in the world of coffee. You can find coffee types, coffee brewing methods, health information about coffee consumption and more on our site. Moreover,
+                                            You can make your coffee experience even more enjoyable by examining our carefully selected coffee products. We invite you to a coffee-filled journey!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="container ">
+                            <div class="row">
+                                <div class="col-md-7 col-lg-6 ">
+                                    <div class="detail-box">
+                                        <h1>
+                                            kahvedükkanı
+                                        </h1>
+                                        <p>
+                                            As kahvedükkanı, we are here to answer all your questions about coffee and to offer you the best coffee experience. Are you ready to step into a special world for coffee lovers? By visiting our site, you can discover everything about coffee and join the ranks of coffee lovers. KahveWebSite.com,
+                                            It is waiting for everyone who shares the passion for coffee!
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <ol class="carousel-indicators">
+                        <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+                        <li data-target="#customCarousel1" data-slide-to="1"></li>
+                        <li data-target="#customCarousel1" data-slide-to="2"></li>
+                    </ol>
+                </div>
+            </div>
+
+        </section>
+        <!-- end slider section -->
+    </div>
+
+    <!-- category section -->
+
+    <section class="food_section layout_padding-bottom">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <br />
+                <h2>
+                    Our Categories
+                </h2>
+            </div>
+
+            <div class="row grid">
+                @foreach (var x in Model)
+                {
+                    <div class="col-sm-6 col-lg-4">
+                        <div class="box">
+                            <div>
+                                <div class="img-box">
+                                    <img src="@x.CategoryImgUrl" alt="">
+                                </div>
+                                <div class="detail-box">
+
+                                    <h5>
+                                        @x.CategoryName
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+
+    <!-- end category section -->
+    <!-- jQery -->
+    <script src="~/web/js/jquery-3.4.1.min.js"></script>
+    <!-- popper js -->
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <!-- bootstrap js -->
+    <script src="~/web/js/bootstrap.js"></script>
+    <!-- owl slider -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <!-- isotope js -->
+    <script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+    <!-- nice select -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+    <!-- custom js -->
+    <script src="~/web/js/custom.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+    <!-- End Google Map -->
+
+</body>
+
+</html>

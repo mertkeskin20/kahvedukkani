@@ -1,0 +1,28 @@
+﻿@using kahvedükkanı.Models.Siniflar
+@model List<AnaSayfa>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayoyt.cshtml";
+}
+
+<h2>Category List</h2>
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>CATEGORY ID</th>
+        <th>CATEGORY NAME</th>
+        <th>REMOVE</th>
+        <th>UPDATE</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.CategoryID</td>
+            <td>@x.CategoryName</td>
+            <td><a href="/Admin/RemoveCategory/@x.CategoryID" class="btn btn-danger">Remove</a></td>
+            <td><a href="/Admin/FindCategory/@x.CategoryID" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Admin/NewCategory/" class="btn btn-primary">Add New Category</a>
